@@ -100,3 +100,17 @@ body {
         padding: 15px 20px;
     }
 }
+
+.hecho{
+    text-aling:center;
+    padding: 10px;
+    borde-radius: 10px;
+    background-color: aqua;
+}
+
+.descripcion{
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aqua;
+}

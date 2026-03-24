@@ -122,3 +122,11 @@ body {
     text-aling:center;
     background-color: aqua-marine;
 }
+
+.enlaces{
+    display:flex;
+    padding:10px;
+    border-radius:10px;
+    text-aling:center;
+    background-color: aqua-marine;
+}

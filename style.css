@@ -1,0 +1,15 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+.titulo{
+    text-align: center;
+    padding: 10px;
+    background-color: aquamarine;
+}

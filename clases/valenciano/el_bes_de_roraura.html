@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El bes de Rosaura</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="barra"></div>
+    <br>
+    <h1 class="titulo">El bes de rosaura</h1>
+    <h2 class="hecho">Hecho por Oliver Muñoz Dimas, Comenius Centre Educatiu.</h2>
+    <div class="descripcion">
+        <h3>En este apartado de mi web encontrarás los vídeos y enlaces de las canciones seleccionadas para el proyecto del grupo de: Oliver, Adrián y Galo.</h3>
+    </div>
+    <div class="contenido">
+        <div class="enlaces">
+            <h3>La Oreja de Van Gogh - Rosas</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nYnLVWXmRm8?si=fYPwtA288FUZYIVv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <a href="https://youtu.be/nYnLVWXmRm8?si=iblMRcHFzOjtL7H8">Youtube</a>
+        </div>
+    </div>
+    <script>
+        // Buscamos el contenedor por su ID
+const contenedor = document.getElementById('barra');
+
+// Traemos el contenido de barra.html
+fetch('../barra.html')
+  .then(respuesta => {
+    if (!respuesta.ok) throw new Error("No se pudo cargar el archivo barra.html");
+    return respuesta.text();
+  })
+  .then(html => {
+    // Insertamos el HTML dentro del div
+    contenedor.innerHTML = html;
+  })
+  .catch(error => console.error('Hubo un error al cargar la barra:', error));
+
+    </script>
+</body>
+</html>

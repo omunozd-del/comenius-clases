@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="barra"></div>
+    <br>
     <h1 class="titulo">Bienvenido/a a mi web de trabajos de clase de comenius (Oliver)</h1>
+    <script>
+    // Seleccionamos el div vacío
+const contenedor = document.getElementById('barra');
+
+// Usamos fetch para obtener el archivo externo
+fetch('barra.html')
+  .then(response => {
+    if (!response.ok) {
+        throw new Error("No se pudo cargar la barra de navegación");
+    }
+    return response.text(); // Convertimos la respuesta a texto/HTML
+  })
+  .then(html => {
+    contenedor.innerHTML = html; // Metemos el HTML dentro de tu div #barra
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+</script>
 </body>
 </html>

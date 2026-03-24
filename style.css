@@ -114,3 +114,9 @@ body {
     border-radius: 10px;
     background-color: aqua;
 }
+
+.contenido{
+    display:flex;
+    padding:10px;
+    border-radius:10px;
+}

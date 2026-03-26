@@ -1,10 +1,12 @@
 <nav class="navbar">
     <a href="index.html" class="logo">ComCla</a>
-    <ul class="nav-links">
+    <!-- Añadimos un ID para identificarlo en el script -->
+    <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="#">Sin función</a></li>
         <li><a href="#">Sin función</a></li>
     </ul>
-    <!-- Opcional: Icono hamburguesa para JS (oculto por ahora) -->
-    <div class="burger">☰</div>
+    <!-- Añadimos el evento onclick aquí mismo para no complicar el JS -->
+    <div class="burger" onclick="document.getElementById('nav-links').classList.toggle('active')">☰</div>
 </nav>
+

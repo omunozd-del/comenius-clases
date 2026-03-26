@@ -143,24 +143,45 @@ body {
 }
 
 /* --- Media Query para Móviles (Mantenida y Ajustada) --- */
+/* --- Media Query para Móviles Mejorada --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; 
-    }
-
     .burger {
         display: block;
-    }
-    
-    .navbar {
-        padding: 15px 20px;
+        z-index: 10;
     }
 
-    .main-container {
-        margin-top: 10px;
+    .nav-links {
+        display: flex; /* Cambiamos de none a flex */
+        flex-direction: column;
+        position: absolute;
+        right: 0px;
+        top: 60px; /* Ajusta según la altura de tu navbar */
+        background-color: #333;
+        width: 100%;
+        align-items: center;
+        gap: 0;
+        
+        /* Animación de apertura */
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
     }
 
-    .titulo {
-        font-size: 1.5rem;
+    /* Esta clase es la que se activa al hacer clic */
+    .nav-links.active {
+        max-height: 300px; /* Altura suficiente para mostrar los links */
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
     }
 }
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases - Proyectos</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- El ID debe coincidir con el del Script para que cargue la barra -->
+    <div id="barra" class="barra"></div>
+
+    <main class="main-container">
+        <h1 class="titulo">El bes de Rosaura</h1>
+        <h2 class="hecho">Fet per Oliver Muñoz Dimas, Comenius Centre Educatiu.</h2>
+
+        <section class="descripcion">
+            <h3>Asignaturas y Proyectos</h3>
+            <p>Haz clic en cada asignatura para ver los detalles de nuestros proyectos.</p>
+        </section>
+
+        <!-- Contenedor que usa tus estilos de tarjetas -->
+        <section class="contenido">
+            <div class="enlaces">
+                
+                <!-- Clase: Matemáticas -->
+                <div class="descripcion" style="width: 100%;">
+                    <h4>Matemáticas</h4>
+                    <p>Resolución de problemas y geometría aplicada.</p>
+                    <a href="#" class="btn-youtube">Ver Proyectos</a>
+                </div>
+
+                <!-- Clase: Lengua -->
+                <div class="descripcion" style="width: 100%;">
+                    <h4>Lengua y Literatura</h4>
+                    <p>Análisis de textos, redacción creativa y ortografía.</p>
+                    <a href="#" class="btn-youtube">Ver Proyectos</a>
+                </div>
+
+                <!-- Clase: Ciencias -->
+                <div class="descripcion" style="width: 100%;">
+                    <h4>Ciencias de la Naturaleza</h4>
+                    <p>Experimentos sobre el medio ambiente y biología.</p>
+                    <a href="#" class="btn-youtube">Ver Proyectos</a>
+                </div>
+
+                <!-- Clase: Historia -->
+                <div class="descripcion" style="width: 100%;">
+                    <h4>Historia</h4>
+                    <p>Un recorrido por las civilizaciones y grandes hitos.</p>
+                    <a href="#" class="btn-youtube">Ver Proyectos</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Corregido el selector para que coincida con el id="barra"
+        const contenedor = document.getElementById('barra');
+        fetch('barra2.html')
+          .then(respuesta => {
+            if (!respuesta.ok) throw new Error("No se pudo cargar la barra");
+            return respuesta.text();
+          })
+          .then(html => { 
+            contenedor.innerHTML = html; 
+          })
+          .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

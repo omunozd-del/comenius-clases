@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignatura - Proyectos</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="barra" class="barra"></div>
+
+    <main class="main-container">
+        <!-- Estos se rellenarán automáticamente con el Script -->
+        <h1 class="titulo" id="main-title">Cargando...</h1>
+        
+        <section class="descripcion">
+            <h3 id="sub-title">Cargando descripción...</h3>
+        </section>
+
+        <section class="contenido">
+            <div id="lista-proyectos" class="enlaces">
+                <!-- Aquí aparecerán los botones de los proyectos -->
+            </div>
+        </section>
+        
+        <br>
+        <div style="text-align: center;">
+            <a href="../index.html" style="color: #333; font-weight: bold; text-decoration: underline;">← Volver al menú de asignaturas</a>
+        </div>
+    </main>
+
+    <script>
+        // ==========================================
+        // 1. CONFIGURACIÓN DE LA PÁGINA (Cambia esto)
+        // ==========================================
+        const tituloPagina = "Proyectes de valencià"; 
+        const subtituloPagina = "Els proyectes de valencià";
+
+        // 2. LISTA DE PROYECTOS (Añade o quita aquí)
+        const proyectos = [
+            { 
+                nombre: "Proyecte: Els bes de Rosaura.", 
+                archivo: "bes_rosaura.html", 
+                desc: "Cançons del projecte del bes de Rosaura." 
+            },
+            { 
+                nombre: "Próximamente", 
+                archivo: "#", 
+                desc: "Proximamente" 
+            }
+        ];
+
+        // ==========================================
+        // LÓGICA (No necesitas tocar esto)
+        // ==========================================
+        
+        // Rellenar títulos
+        document.getElementById('main-title').innerText = tituloPagina;
+        document.getElementById('sub-title').innerText = subtituloPagina;
+
+        // Generar las tarjetas
+        const contenedor = document.getElementById('lista-proyectos');
+        
+        proyectos.forEach(p => {
+            const tarjeta = document.createElement('div');
+            tarjeta.className = 'descripcion'; // Reutiliza tu estilo aqua
+            tarjeta.style.width = '100%';
+            
+            tarjeta.innerHTML = `
+                <h4>${p.nombre}</h4>
+                <p style="margin-bottom: 15px;">${p.desc}</p>
+                <a href="${p.archivo}" class="btn-youtube">Ver Proyecto</a>
+            `;
+            
+            contenedor.appendChild(tarjeta);
+        });
+
+        // Cargar barra de navegación
+        fetch('../barra.html')
+          .then(res => res.text())
+          .then(html => { document.getElementById('barra').innerHTML = html; })
+          .catch(err => console.error('Error:', err));
+    </script>
+</body>
+</html>

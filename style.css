@@ -202,8 +202,6 @@ body {
 
     .contenido-desplegado {
     /* Estado inicial (cuando está abierto) */
-    transition: 0.3s;
-    padding: 15px;
     border: 1px solid #ccc;
     border-top: none;
     border-radius: 0 0 5px 5px;

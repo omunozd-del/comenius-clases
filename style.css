@@ -186,6 +186,7 @@ body {
 }
 
     summary {
+        transition: 0.3s;
         padding: 10px;
         background-color: #007bff;
         color: white;
@@ -200,6 +201,7 @@ body {
     }
 
     .contenido-desplegado {
+        transition: 0.3s;
         padding: 15px;
         border: 1px solid #ccc;
         border-top: none;

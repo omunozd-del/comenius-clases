@@ -207,3 +207,19 @@ body {
         border-top: none;
         border-radius: 0 0 5px 5px;
     }
+
+      .contenido-desplegado {
+    /* Estado inicial (cuando está abierto) */
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding-top: 10px;
+  }
+
+  /* El truco mágico: @starting-style define el estado justo antes de abrirse */
+  @starting-style {
+    details[open] .contenido-desplegado {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }

@@ -199,22 +199,34 @@ body {
     summary:hover {
         background-color: #0056b3;
     }
+.contenido-desplegado {
+  /* Estado base (abierto) */
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+  
+  /* Animación */
+  opacity: 1;
+  transform: translateY(0);
+  transition: 
+    opacity 0.5s ease, 
+    transform 0.5s ease, 
+    display 0.5s ease allow-discrete; /* Permite animar elementos que pasan a display: none */
+}
 
-    .contenido-desplegado {
-    /* Estado inicial (cuando está abierto) */
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    opacity: 1;
-    height: auto;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    padding-top: 10px;
-  }
+/* Estado cuando el details está CERRADO */
+details:not([open]) .contenido-desplegado {
+  opacity: 0;
+  transform: translateY(-10px);
+  display: none; /* Evita que ocupe espacio o sea interactivo */
+}
 
-  /* El truco mágico: @starting-style define el estado justo antes de abrirse */
-  @starting-style {
-    details[open] .contenido-desplegado {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
+/* Estado inicial justo al abrirse */
+@starting-style {
+  details[open] .contenido-desplegado {
+    opacity: 0;
+    transform: translateY(-10px);
   }
+}
+
